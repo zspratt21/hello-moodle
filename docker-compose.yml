@@ -8,7 +8,7 @@ services:
       - ./vendor/moodle/moodle:/var/www/html
       - ./vendor:/var/www/html/vendor
       - ./config.php:/var/www/html/config.php
-      # @todo directory for custom plugins
+      - ./custom_plugins/blocks/helloblock:/var/www/html/blocks/helloblock
       - moodle_data:/var/www/moodledata
     environment:
       PHP_INI-upload_max_filesize: "200M"
