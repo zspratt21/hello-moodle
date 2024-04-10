@@ -1,0 +1,18 @@
+{
+  "require": {
+    "moodle/moodle": "4.3.*"
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/moodle/moodle.git"
+    }
+  ],
+  "extra": {
+    "installer-paths": {
+      "public_html/": [
+        "moodle/moodle"
+      ]
+    }
+  }
+}

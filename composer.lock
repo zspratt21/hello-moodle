@@ -1,0 +1,102 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "5f2dae7df90ad454a1531a16ad3a7fb3",
+    "packages": [
+        {
+            "name": "moodle/moodle",
+            "version": "v4.3.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/moodle/moodle.git",
+                "reference": "0f84dd778b20ba0f456a0562c98c2a020c9b1403"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/moodle/moodle/zipball/0f84dd778b20ba0f456a0562c98c2a020c9b1403",
+                "reference": "0f84dd778b20ba0f456a0562c98c2a020c9b1403",
+                "shasum": ""
+            },
+            "require": {
+                "ext-ctype": "*",
+                "ext-curl": "*",
+                "ext-dom": "*",
+                "ext-fileinfo": "*",
+                "ext-gd": "*",
+                "ext-hash": "*",
+                "ext-iconv": "*",
+                "ext-intl": "*",
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "ext-openssl": "*",
+                "ext-pcre": "*",
+                "ext-simplexml": "*",
+                "ext-sodium": "*",
+                "ext-spl": "*",
+                "ext-xml": "*",
+                "ext-xmlreader": "*",
+                "ext-zip": "*",
+                "ext-zlib": "*",
+                "php": ">=8.0.0"
+            },
+            "require-dev": {
+                "behat/behat": "3.13.*",
+                "behat/mink": "^1.10.0",
+                "behat/mink-browserkit-driver": "^2.1.0",
+                "friends-of-behat/mink-extension": "^2.7.2",
+                "mikey179/vfsstream": "1.6.*",
+                "oleg-andreyev/mink-phpwebdriver": "1.2.*",
+                "phpunit/phpunit": "9.5.*",
+                "symfony/http-client": "^4.4 || ^5.0 || ^6.0",
+                "symfony/mime": "^4.4 || ^5.0 || ^6.0",
+                "symfony/process": "^4.4 || ^5.0 || ^6.0"
+            },
+            "suggest": {
+                "ext-exif": "Enabling Exif PHP extension is recommended, it is used by Moodle to parse image meta data.",
+                "ext-mysqli": "Needed when Moodle uses MySQL or MariaDB database.",
+                "ext-oci8": "Needed when Moodle uses Oracle database.",
+                "ext-pgsql": "Needed when Moodle uses PostgreSQL database.",
+                "ext-soap": "Enabling SOAP PHP extension is useful for web services and some plugins.",
+                "ext-sqlsrv": "Needed when Moodle uses MS SQL Server database.",
+                "ext-tokenizer": "Enabling Tokenizer PHP extension is recommended, it improves Moodle Networking functionality."
+            },
+            "type": "project",
+            "autoload-dev": {
+                "psr-0": {
+                    "Moodle\\BehatExtension": "lib/behat/extension/"
+                }
+            },
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "description": "Moodle - the world's open source learning platform",
+            "homepage": "https://moodle.org",
+            "support": {
+                "source": "https://github.com/moodle/moodle/tree/v4.3.3"
+            },
+            "funding": [
+                {
+                    "type": "custom",
+                    "url": "https://moodle.com/donations/"
+                },
+                {
+                    "type": "custom",
+                    "url": "moodle.org"
+                }
+            ],
+            "time": "2024-02-09T02:33:30+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
+}

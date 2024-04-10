@@ -1,0 +1,35 @@
+version: '3'
+services:
+  moodle:
+    image: moodlehq/moodle-php-apache:8.3
+    ports:
+      - "${MOODLE_FORWARDED_PORT:-8100}:80"
+    volumes:
+      - ./vendor/moodle/moodle:/var/www/html
+      - ./vendor:/var/www/html/vendor
+      - ./config.php:/var/www/html/config.php
+      # @todo directory for custom plugins
+      - moodle_data:/var/www/moodledata
+    environment:
+      PHP_INI-upload_max_filesize: "200M"
+      PHP_INI-post_max_size: "210M"
+    env_file: .env
+
+  db:
+    image: mysql:8.3
+    restart: unless-stopped
+    environment:
+      - MYSQL_DATABASE=${DB_NAME}
+      - MYSQL_USER=${DB_USERNAME}
+      - MYSQL_PASSWORD=${DB_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+    volumes:
+      - mysql_data:/var/lib/mysql
+    ports:
+      - "${DB_PORT:-3306}:3306"
+
+  # @todo mailpit for email monitoring
+
+volumes:
+  moodle_data:
+  mysql_data:
