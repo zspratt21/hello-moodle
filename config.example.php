@@ -4,7 +4,7 @@ unset($CFG);
 global $CFG;
 $CFG = new stdClass();
 
-$CFG->dbtype    = 'mysqli';
+$CFG->dbtype    = 'pgsql';
 $CFG->dblibrary = 'native';
 $CFG->dbhost    = 'db';
 $CFG->dbname    = 'moodle';
@@ -13,14 +13,18 @@ $CFG->dbpass    = 'supersecure1234';
 $CFG->prefix    = 'mdl_';
 $CFG->dboptions = array (
     'dbpersist' => 0,
-    'dbport' => 3306,
+    'dbport' => 5432,
     'dbsocket' => '',
-    'dbcollation' => 'utf8mb4_0900_ai_ci',
 );
 
 $CFG->wwwroot   = 'http://localhost:8100';
 $CFG->dataroot  = '/var/www/moodledata';
 $CFG->admin     = 'admin';
+
+$CFG->smtphosts = 'mailpit:1025';
+$CFG->noreplyaddress = 'noreply@hellomoodle.com';
+$CFG->smtpuser = ''; // Leave blank if authentication is not needed
+$CFG->smtppass = ''; // Leave blank if authentication is not needed
 
 $CFG->directorypermissions = 0777;
 

@@ -16,20 +16,28 @@ services:
     env_file: .env
 
   db:
-    image: mysql:8.3
-    restart: unless-stopped
-    environment:
-      - MYSQL_DATABASE=${DB_NAME}
-      - MYSQL_USER=${DB_USERNAME}
-      - MYSQL_PASSWORD=${DB_PASSWORD}
-      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+    image: postgres:16.2
     volumes:
-      - mysql_data:/var/lib/mysql
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_USER=${DB_USERNAME}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
     ports:
-      - "${DB_PORT:-3306}:3306"
+      - "${DB_PORT:-5432}:5432"
 
-  # @todo mailpit for email monitoring
+  mailpit:
+    image: 'axllent/mailpit:latest'
+    restart: unless-stopped
+    ports:
+      - '${MAIL_FORWARDED_PORT:-1025}:1025'
+      - '${MAIL_FORWARDED_DASHBOARD_PORT:-8025}:8025'
+    volumes:
+      - mailpit_data:/data
+    environment:
+      MP_DATA_FILE: /data/mailpit.db
 
 volumes:
+  mailpit_data:
   moodle_data:
-  mysql_data:
+  postgres_data:
